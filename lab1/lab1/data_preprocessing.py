@@ -15,12 +15,11 @@ y_train = train_data['Temperature']
 # Извлечение признаков и целевой переменной из тестовой выборки
 X_test = test_data.drop('Temperature', axis=1)
 y_test = test_data['Temperature']
+
 # Преобразование столбца Date в тип данных datetime
 X_train['Date'] = pd.to_datetime(X_train['Date'])
+X_test['Date'] = pd.to_datetime(X_test['Date'])
 
-# Применение предобработки данных
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
 # Применение предобработки данных
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
